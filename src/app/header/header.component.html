@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <ul>
+        <a routerLink="tasks">Tareas</a>
+    </ul>
+    <ul>
+        <a routerLink="create">Crear tarea</a>
+    </ul>
+    <span class="spacer"></span>
+    <ul>
+        <a *ngIf="!authService.isUserLogged()" mat-button routerLink="signup">Sign Up</a>
+        <a *ngIf="!authService.isUserLogged()" mat-button routerLink="login">Log in</a>
+        <a *ngIf="authService.isUserLogged()" mat-button (click)="authService.logoutUser()">Logout</a>
+    </ul>
+</mat-toolbar>
